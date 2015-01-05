@@ -412,6 +412,17 @@ body {
   background-color: #161616;
   color: white;
   font-family: "Segoe UI", "Helvetica Neue", "Helvetica", "Arial", "sans-serif", "微软雅黑";
+
+  a {
+    color: lighten(#4183c4, 20%);
+    &:hover {
+      color: darken(lighten(#4183c4, 20%), 15%);
+    }
+  }
+
+  .col{
+    padding:0 10px;
+  }
 }
 
 @include keyframes(click_to_continue) {
@@ -494,6 +505,10 @@ $c: lighten(#4cc85e, 20%);
         a.text.link {
           text-decoration: none;
           border-bottom:dashed 1px;
+        }
+
+        img.img {
+          display: block !important;
         }
       }
 

@@ -22,6 +22,7 @@
       }
       this.style = _data.style;
       this.link = _data.link;
+      this.image = _data.image;
     }
 
     return ChatSentence;

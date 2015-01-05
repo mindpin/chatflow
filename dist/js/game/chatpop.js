@@ -46,6 +46,12 @@
       }
     };
 
+    ChatPop.prototype.image = function(image, callback) {
+      var $image;
+      $image = buildel('img.img').attr('src', image).hide().fadeIn().appendTo(this.$pop);
+      return callback();
+    };
+
     ChatPop.prototype.append = function(sentence) {
       var callback_holder, finish, textdone;
       callback_holder = new CallbackHolder;
@@ -63,11 +69,15 @@
           return setTimeout(finish, sentence.delay);
         };
       }
-      this.text(sentence.text, textdone, {
-        linebreak: sentence.linebreak,
-        style: sentence.style,
-        link: sentence.link
-      });
+      if (sentence.image != null) {
+        this.image(sentence.image, textdone);
+      } else {
+        this.text(sentence.text, textdone, {
+          linebreak: sentence.linebreak,
+          style: sentence.style,
+          link: sentence.link
+        });
+      }
       return callback_holder;
     };
 

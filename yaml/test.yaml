@@ -10,6 +10,11 @@ npcs:
 scripts:
   - npc: ben7th
     sentences:
+    - image: http://img.teamkn.com/i/Mt7I5uCh.png
+    - text: 这样可以插入图片
+
+  - npc: ben7th
+    sentences:
     - 你好，我是 ben7th.
     - 现在你看到的，是我正在开发的一种内容展现形式。
     - 这种内容展现形式以对话泡泡为基础。

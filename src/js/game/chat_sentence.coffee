@@ -17,3 +17,5 @@ window.ChatSentence = class ChatSentence
     @style = _data.style
 
     @link = _data.link
+
+    @image = _data.image

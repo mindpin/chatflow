@@ -64,6 +64,15 @@ window.ChatPop = class ChatPop
     else
       $text.typing_string_nobr string, callback
 
+  image: (image, callback)->
+    $image = buildel 'img.img'
+      .attr 'src', image
+      .hide()
+      .fadeIn()
+      .appendTo @$pop
+
+    callback()
+
   append: (sentence)->
     callback_holder = new CallbackHolder
     finish = ->
@@ -76,11 +85,14 @@ window.ChatPop = class ChatPop
       textdone = ->
         setTimeout finish, sentence.delay
 
-    @text sentence.text, textdone, {
-      linebreak: sentence.linebreak
-      style: sentence.style
-      link: sentence.link
-    }
+    if sentence.image?
+      @image sentence.image, textdone
+    else
+      @text sentence.text, textdone, {
+        linebreak: sentence.linebreak
+        style: sentence.style
+        link: sentence.link
+      }
 
     return callback_holder
 
