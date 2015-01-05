@@ -1,0 +1,278 @@
+npcs:
+  - id: ben7th
+    name: ben7th
+    avatar: http://img.teamkn.com/i/HeFmHFQq.png@100h.png
+
+  - id: android
+    name: ANDROID机器人
+    avatar: http://img.teamkn.com/i/tLsGEwZz.png
+
+scripts:
+  - npc: ben7th
+    sentences:
+    - 你好，我是 ben7th.
+    - 现在你看到的，是我正在开发的一种内容展现形式。
+    - 这种内容展现形式以对话泡泡为基础。
+    - 可以制造一种更平顺的，阅读压力更小的，表现力更好的效果。
+
+  - npc: ben7th
+    sentences:
+    - text: 这种展现形式是我在开发一个编程教程的过程中设计出来的。
+    - text: 除了适合用于教学场景之外，
+      delay: 400
+      linebreak: false
+    - text: 我觉得它也适合用在其他一些地方。
+
+  - npc: ben7th
+    sentences:
+    - text: 用对话泡泡来呈现文本时，
+      delay: 400
+      linebreak: false
+    - text: 可以很细微地设置文本的显示顺序，节奏和样式。
+      delay: 400
+    - text: 我把这种概念称之为
+      delay: 0
+      linebreak: false
+    - text: 文本的演出
+      style:
+        color: '#fcf178'
+        font-weight: bold
+      delay: 0
+      linebreak: false
+    - text: 。
+
+  - npc: ben7th
+    clear: false
+    sentences:
+    - text: 文本的演出有什么好处呢？
+      delay: 400
+    - text: 嗯 ……
+      delay: 500
+    - text: 让我想想再告诉你 ……
+      delay: 500
+    - text: ……
+      delay: 500
+    - text: ……
+      delay: 500
+    - text: 你看，是不是确实有
+      linebreak: false
+      delay: 300
+    - text: 我
+      delay: 300
+      linebreak: false
+    - text: 在
+      delay: 300
+      linebreak: false
+    - text: 想
+      delay: 300
+      linebreak: false
+    - text: 的感觉？
+
+  - npc: ben7th
+    sentences:
+    - text: 文字的展现方式是很多的，比如：
+      delay: 0
+      linebreak: false
+
+    - text: 这是粗体字
+      style:
+        font-weight: bold
+
+    - text: 这是有颜色的字
+      style:
+        color: '#fcf178'
+
+    - text: 这是有颜色的粗体字
+      style:
+        color: '#44B2F5'
+        font-weight: bold
+
+    - text: 这是
+      delay: 0
+      linebreak: false
+      style:
+        color: white
+    - text: 被打穿
+      style:
+        text-decoration: 'line-through'
+        color: '#999'
+      delay: 0
+      linebreak: false
+    - text: 带删除线的字
+      style:
+        color: white
+
+    - text: 这是
+      delay: 300
+      linebreak: false
+    - text: 大
+      style:
+        font-size: 24px
+        font-weight: bold
+      delay: 300
+      linebreak: false
+    - text: 大
+      style:
+        font-size: 32px
+        font-weight: bold
+      delay: 300
+      linebreak: false
+    - text: 大
+      style:
+        font-size: 48px
+        font-weight: bold
+      delay: 300
+      linebreak: false
+    - text: 字
+
+  - npc: ben7th
+    sentences:
+    - text: 可以用字体和展现节奏来制造一些效果，比如：
+      delay: 300
+      linebreak: false
+    - text: 呐喊。
+      delay: 500
+    - text: '啊啊 '
+      style:
+        font-size: 16px
+        font-weight: bold
+      delay: 300
+      linebreak: false
+    - text: '啊啊啊 '
+      style:
+        font-size: 24px
+        font-weight: bold
+        color: '#fcf178'
+      delay: 300
+      linebreak: false
+    - text: '啊啊啊啊 '
+      style:
+        font-size: 32px
+        font-weight: bold
+        color: '#44B2F5'
+      delay: 300
+      linebreak: true
+    - text: 哦对了，
+      delay: 300
+      linebreak: false
+    - text: 还可以添加链接，比如：
+      delay: 500
+    - text: 我的微博
+      link: http://weibo.com/ben7th
+
+  - npc: ben7th
+    sentences:
+    - text: 可以呈现不同角色的对话泡泡，
+      delay: 300
+      linebreak: false
+    - text: 以加强生动的效果。
+      delay: 500
+    - text: 比如：……
+      delay: 500
+    - text: 小A！
+      delay: 500
+      linebreak: false
+      style:
+        font-size: 32px
+        line-height: 48px
+    - text: 在吗？
+      style:
+        font-size: 32px
+        line-height: 48px
+      delay: 400
+
+  - npc: android
+    sentences:
+    - text: 在！
+      style:
+        font-size: 32px
+        line-height: 48px
+      delay: 800
+    clear: false
+
+  - npc: ben7th
+    sentences:
+    - text: 好了，没事，你走吧 ~
+      delay: 400
+    clear: false
+
+  - npc: android
+    sentences:
+    - text: 'YES! '
+      style:
+        font-size: 32px
+        line-height: 48px
+      delay: 500
+      linebreak: false
+    - text: SIR!
+      style:
+        font-size: 32px
+        line-height: 48px
+    clear: false
+
+  - npc: ben7th
+    sentences:
+    - text: 所以说，这样来展示文字是比单纯的文本要生动的。
+    - text: 噢，对了。这个展示方式完全兼容手机。
+    - text: 可以试试用手机来浏览。
+
+  - npc: ben7th
+    sentences:
+    - text: 对话展现流中可以嵌入多种组件。
+    - text: 比如，可以嵌入提问：
+      delay: 300
+
+  - select: what-is-css
+    text: CSS 是什么？
+    items:
+      - 好吃的东西
+      - 一种样式表语言
+      - 神秘的咒语
+      - 叉(C) 烧(S) 笋(S)
+    clear: false
+
+  - selected: what-is-css
+    response:
+    - npc: ben7th
+      sentences:
+      - 你是吃货吗？
+    - npc: ben7th
+      sentences:
+      - 这个答案还算靠谱。
+    - npc: ben7th
+      sentences:
+      - 不错的比喻。
+    - npc: ben7th
+      sentences:
+      - 这只是拼音谐音而已啊。
+
+  - npc: ben7th
+    sentences:
+    - text: 根据选择的不同，还可以有不同的后续响应。
+    clear: false
+
+  - npc: ben7th
+    sentences:
+    - text: 除了问题组件之外，
+      delay: 400
+      linebreak: false
+    - text: 我也正在开发其他组件，
+      delay: 400
+      linebreak: false
+    - text: 例如视频，音频，交互动画。
+      delay: 400
+    - text: 甚至程序编辑窗口。
+    - text: 这样，它就可以用来进行互动编程教学了。
+
+  - npc: ben7th
+    sentences:
+    - text: 事实上，第一个用到这种展现形式的多媒体产品，
+      delay: 400
+      linebreak: false
+    - text: 应该就是我正在开发的 CSS 互动编程教学。
+    - text: 这个教学产品包含很多章节，我希望能尽快发布前几个小节。
+    clear: false
+
+  - sentences:
+    - 演示完毕
+    clear: false
