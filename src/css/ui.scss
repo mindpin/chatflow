@@ -1,3 +1,18 @@
+// 大一些的屏幕，平板电脑
+$screen-pad-min:    768px !default; // IPAD2 屏宽
+
+// 一般的屏幕，笔记本电脑，小显示器的台式机
+$screen-desk-min:   992px !default;
+
+// 宽屏显示器，台式机，电视
+$screen-wide-min:   1200px !default;
+
+$screen-phone-max:  $screen-pad-min - 1px !default;
+$screen-pad-max:    $screen-desk-min - 1px !default;
+$screen-desk-max:   $screen-wide-min - 1px !default;
+
+// -----------------
+
 @mixin clearfix {
   &:before, &:after {
     content:"";
@@ -412,6 +427,7 @@ body {
   background-color: #161616;
   color: white;
   font-family: "Segoe UI", "Helvetica Neue", "Helvetica", "Arial", "sans-serif", "微软雅黑";
+  padding:0;margin:0;
 
   a {
     color: lighten(#4183c4, 20%);
@@ -421,7 +437,7 @@ body {
   }
 
   .col{
-    padding:0 10px;
+    padding:0 15px;
   }
 }
 
@@ -459,20 +475,32 @@ $c: lighten(#4cc85e, 20%);
     @include clearfix;
     position: relative;
     padding: $grid-gap / 2 0;
-    padding-bottom: 0;
+    // padding-bottom: 0;
+
+    // background: rgba(blue, 0.5);
 
     $w: 64px;
+    $sw: 48px;
 
     img.avatar {
       width:$w;height:$w;
       border-radius:4px;
       position:relative;
       float:left;
+
+      // 手机上的头像更小
+      @include -below(phone) {
+        width:$sw;height:$sw;
+      }
     }
 
     .area {
       margin-left: $w + $grid-gap / 2 + 10px;
       @include clearfix;
+
+      @include -below(phone) {
+        margin-left: $sw + $grid-gap / 2 + 10px;
+      }
 
       .pop {
         float: left;
@@ -483,9 +511,12 @@ $c: lighten(#4cc85e, 20%);
         line-height:28px;min-height:28px;
         cursor:default;
         position: relative;
-        margin-bottom: 10px;
+        // margin-bottom: 10px;
         box-sizing:border-box;
         max-width:100%;
+
+        word-wrap: break-word;
+        white-space: pre-wrap;
 
         $w1: $w;
         &:before {
@@ -509,6 +540,9 @@ $c: lighten(#4cc85e, 20%);
 
         img.img {
           display: block !important;
+          max-width: 100%;
+          margin-top: 10px;
+          margin-bottom: 10px;
         }
       }
 
@@ -521,6 +555,7 @@ $c: lighten(#4cc85e, 20%);
         @include animation(click_to_continue 1s infinite);
         position: relative;
         height:32px;line-height:32px;
+        margin-top: 10px;
 
         $w:6px;
         &:before, &:after {
@@ -542,6 +577,12 @@ $c: lighten(#4cc85e, 20%);
       .area {}
       .area .pop {color:#aaa;}
       .area .pop:before {display: none;}
+
+      @include -below(phone) {
+        .area {
+          margin-left: 0;
+        }
+      }
     }
   }
 
@@ -549,7 +590,7 @@ $c: lighten(#4cc85e, 20%);
     @include clearfix;
     position: relative;
     padding: $grid-gap / 2 0;
-    padding-bottom: 0;
+    // padding-bottom: 0;
 
     $w: 64px;
     .box {
@@ -584,6 +625,11 @@ $c: lighten(#4cc85e, 20%);
         .item {
           @include col(1/2, $gap:10px);
           margin-bottom:10px;
+
+          @include -below(phone) {
+            @include col(1, $gap:10px);
+          }
+
           a {
             display:block;
             font-size: 16px;

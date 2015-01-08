@@ -6,6 +6,7 @@
       this.game = game;
       this.$chatbox = jQuery('.panel.chatbox');
       this.pops = [];
+      this.bind_events();
     }
 
     ChatBox.prototype.clear = function(callback) {
@@ -65,6 +66,19 @@
       })(this));
       this.pops.push(questionpop);
       return callback_holder;
+    };
+
+    ChatBox.prototype.bind_events = function() {
+      return jQuery(document).on('chatflow.content-changed', (function(_this) {
+        return function() {
+          var height, window_height;
+          height = _this.$chatbox.height();
+          window_height = jQuery(window).height();
+          if (height > window_height) {
+            return jQuery(window).scrollTop(height - window_height);
+          }
+        };
+      })(this));
     };
 
     return ChatBox;

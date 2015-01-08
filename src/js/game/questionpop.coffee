@@ -45,6 +45,9 @@ window.QuestionPop = class QuestionPop
         .html item
         .appendTo $item
 
+    # 自动滚屏
+    jQuery(document).trigger('chatflow.content-changed')
+
     setTimeout =>
       for item, idx in script.items
         $a = @$items.find('a').eq(idx)

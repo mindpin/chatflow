@@ -23,6 +23,7 @@
       this.style = _data.style;
       this.link = _data.link;
       this.image = _data.image;
+      this.speed = _data.speed || 50;
     }
 
     return ChatSentence;

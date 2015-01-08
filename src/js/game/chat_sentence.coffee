@@ -19,3 +19,5 @@ window.ChatSentence = class ChatSentence
     @link = _data.link
 
     @image = _data.image
+
+    @speed = _data.speed || 50

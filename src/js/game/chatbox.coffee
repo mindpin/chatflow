@@ -4,6 +4,8 @@ window.ChatBox = class ChatBox
     @$chatbox = jQuery('.panel.chatbox')
     @pops = []
 
+    @bind_events()
+
   # 清除所有泡泡，再调用回调方法
   clear: (callback)->
     _clear_count = @pops.length
@@ -62,3 +64,12 @@ window.ChatBox = class ChatBox
   #   htmlpop.show script, ->
   #     htmlpop.remove()
   #     callback()
+
+  bind_events: ->
+    jQuery(document).on 'chatflow.content-changed', =>
+      height = @$chatbox.height()
+      window_height = jQuery(window).height()
+
+      # console.log height, window_height
+      if height > window_height
+        jQuery(window).scrollTop height - window_height

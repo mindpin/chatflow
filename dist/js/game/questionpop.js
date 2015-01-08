@@ -27,6 +27,7 @@
           href: 'javascript:;'
         }).html(item).appendTo($item);
       }
+      jQuery(document).trigger('chatflow.content-changed');
       return setTimeout((function(_this) {
         return function() {
           var _j, _len1, _ref1, _results;

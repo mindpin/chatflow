@@ -57,19 +57,23 @@ window.ChatPop = class ChatPop
     # 样式
     if config.style?
       $text.css config.style
-    
+
     # 换行或不换行
     if config.linebreak is true
-      $text.typing_string string, callback
+      $text.typing_string string, config.speed, callback
     else
-      $text.typing_string_nobr string, callback
+      $text.typing_string_nobr string, config.speed, callback
 
-  image: (image, callback)->
+  image: (image, callback, config={})->
     $image = buildel 'img.img'
       .attr 'src', image
       .hide()
       .fadeIn()
       .appendTo @$pop
+
+    # 样式
+    if config.style?
+      $image.css config.style
 
     callback()
 
@@ -86,12 +90,15 @@ window.ChatPop = class ChatPop
         setTimeout finish, sentence.delay
 
     if sentence.image?
-      @image sentence.image, textdone
+      @image sentence.image, textdone, {
+        style: sentence.style
+      }
     else
       @text sentence.text, textdone, {
         linebreak: sentence.linebreak
         style: sentence.style
         link: sentence.link
+        speed: sentence.speed
       }
 
     return callback_holder
